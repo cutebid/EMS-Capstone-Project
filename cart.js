@@ -13,7 +13,8 @@ function setCartItems(event){
     let btn = event.target;
     let btnParent = btn.parentElement;
     let productName = btnParent.children[1].innerText;
-    let productPrice = btnParent.children[3].innerText;
+    let productPrice = btnParent.children[0].children[1].children[1].innerText;
+    console.log(productPrice)
     let containerRow = document.createElement('div');
     containerRow.classList.add('container-row');
     containerRow.innerHTML = `
