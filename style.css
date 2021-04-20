@@ -142,7 +142,6 @@ text-align: center;}
 }
 .image-area {
   position: relative;
-  width: 380px;
 }
 .overlay {
   display: flex;
@@ -352,6 +351,7 @@ input + p {
   align-items: center;
 }
 .foothead{
+  font-size: 20px;
   margin-bottom: 30px;
 }
 .container3 {
@@ -360,13 +360,19 @@ input + p {
   grid-gap: 0;
   padding-bottom: 0px;
 }
-.container { width: 200px;
-  background-color: white;
-   position: absolute;
-    top: 0;
-    left: 0;  
-     padding-bottom: 5px;
-     display: none;
+.container {
+   width: 400px;
+    top: 0px;
+    left: 0px;  
+     
 }
-
+input {
+  width: 80%;
+}
+.input-container {
+  margin-left: 30px;
+}
+body {
+  width: 400px;
+}
 }

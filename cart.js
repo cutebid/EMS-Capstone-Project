@@ -98,7 +98,7 @@ function removebtn() {
             if (btn.innerText == '+') {
                 var newVal = ++oldVal[i];
             } else {
-                if (oldVal[i+1] == 0) {
+                if (oldVal[i+1] == -1) {
                     newVal = 0;
                 } else {
                     var newVal = --oldVal[i+1];
