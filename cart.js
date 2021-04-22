@@ -9,7 +9,9 @@ for (let i = 0; i < addToCartBtn.length; i++) {
             setCartItems
             )
 }
-console.log(document.getElementById('total').innerHTML);
+
+
+
 function setCartItems(event){
     let btn = event.target;
     let btnParent = btn.parentElement;
@@ -39,6 +41,8 @@ function setCartItems(event){
     addbtn();
 }
 
+
+
 // this function calaculate the total amount of goods purchased
 function updateCartTotal(){
     let containerColumn = document.querySelector('.container-column');
@@ -54,7 +58,9 @@ function updateCartTotal(){
     document.querySelector('#total span').innerHTML = total;
 }
 
-  // this remove the item from the cart
+ 
+
+// this remove the item from the cart
 function removebtn() {
    let removeBtn = document.querySelectorAll('.btn-remove');
    for(let i = 0; i < removeBtn.length; i++){
@@ -111,7 +117,9 @@ function removebtn() {
     })
 }
 
-    // cart number gets updated when the addto cart button is being clicked on                 
+    
+
+// cart number gets updated when the addto cart button is being clicked on                 
     
     for (let i = 0; i < addToCartBtn.length; i++) {
                 addToCartBtn[i].addEventListener('click', addnumbertoCart
@@ -135,7 +143,9 @@ function removebtn() {
         )
     }
 
-      // closing the whole product container
+      
+    
+    // closing the whole product container
       let buttonContinue = document.getElementById('continueBtn');
       buttonContinue.onclick = mybtn;
       
@@ -146,6 +156,7 @@ function removebtn() {
     }
       }
 
+      
       // the inputs validation
       function nameValidation(){
         let nameinput = document.getElementById('Name');
