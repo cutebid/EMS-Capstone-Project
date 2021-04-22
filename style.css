@@ -75,6 +75,10 @@ ul a:hover  {
     font-size: 20px;
    
 }
+.btn {
+  border: none;
+  outline: none;
+}
 .container2 {
              /* height: 45vh; */
              background-color: black;
