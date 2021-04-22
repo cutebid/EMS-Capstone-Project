@@ -20,7 +20,7 @@
 
             
             <div class="input-container">
-                <form action="">
+                <form class="formpage">
                     <input type="text" name="Name" id="Name" placeholder="Your Name">
                     <p id="namePara"></p>
                     <input type="email" name="Email" id="Email" placeholder="Your Email">
@@ -31,11 +31,11 @@
             </div>
             <div class="total-container">
                 <h3> Total Amount To be Paid </h3>
-                <h1 id="total">  &#8358; <span> 0 </span> </h1>
+                <h1 id="total">  &#8358; <span id="amount"> 0 </span> </h1>
             </div>
             <div class="btn-container">
                 <button id="continueBtn" class="continueBtn"> Continue Shopping </button>
-                <button id="checkout"> Checkout </button>
+                <button id="checkout" onclick="payWithPaystack()"> Checkout </button>
             </div>
             
         
@@ -55,7 +55,7 @@
             </nav>
             <div class="heroimage">
                 <h1 class="text1"> THE <br> E-MILLENIAL <br> STORE </h1>
-                <img id="img1" src="images/heroImage.png" alt="heroImage" height="300px" width="300px">
+                <img id="img1" src="images/heroImage.png" alt="heroImage" height="400px" width="400px">
             </div>
             <button class="btn1"> SHOP NOW </button>
         </div>
@@ -139,7 +139,7 @@
           </div>
 
         
-          
+        <script src="https://js.paystack.co/v1/inline.js"></script> 
         <script src="cart.js"  ></script>
     </body>
 

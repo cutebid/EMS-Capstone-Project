@@ -9,6 +9,7 @@ for (let i = 0; i < addToCartBtn.length; i++) {
             setCartItems
             )
 }
+console.log(document.getElementById('total').innerHTML);
 function setCartItems(event){
     let btn = event.target;
     let btnParent = btn.parentElement;
@@ -145,6 +146,70 @@ function removebtn() {
     }
       }
 
+      // the inputs validation
+      function nameValidation(){
+        let nameinput = document.getElementById('Name');
+        let namepara = document.getElementById('namePara');
+        if(nameinput.value == ""){
+           namepara.innerHTML ='Please enter your name'
+            nameinput.style.border = '2px solid red';
+        }
+        else{
+           nameinput.style.border = '3px solid green';
+           namepara.innerHTML =''
+        }
+
+ };
+
+      function emailValidation(){
+        let emailinput = document.getElementById('Email');
+        let emailpara = document.getElementById('emailPara');
+        if(emailinput.value == ""){
+           emailpara.innerHTML ='Please enter an email'
+            emailinput.style.border = '2px solid red';
+        }
+        else if(!emailinput.value.includes('@')){
+           emailinput.style.border = '2px solid red';
+           emailpara.innerHTML =' Invalid email'
+        }
+        else{
+            emailinput.style.border = '2px solid green';
+            emailpara.innerHTML =''
+        }
+
+ };
+
+     function numberValidation(){
+         let numberinput = document.getElementById('Number');
+         let numberpara = document.getElementById('numberPara');
+         let maxlength = '11'
+         if(numberinput.value == '') {
+             numberpara.innerHTML ='Please enter your telephone number';
+             numberinput.style.border = '3px solid red'
+         }
+         else if(numberinput.value.length < maxlength){
+            numberpara.innerHTML ='Phone number cannot be less than 11 characters';
+            numberinput.style.border = '3px solid red'
+         }
+        //  else if(isNaN(numberinput.value)){
+        //     numberpara.innerHTML ='Phone number is not a number';
+        //     numberinput.style.border = '2px solid red'
+        //  }
+
+         else{
+            numberinput.style.border = '3px solid green';
+            numberpara.innerHTML =''
+            
+         }
+
+         
+     }
+
+         document.getElementById('Name').onblur = nameValidation;
+         document.getElementById('Email').onblur = emailValidation;
+         document.getElementById('Number').onblur = numberValidation;
+
+
 
      // the cartbutton display the cart container when clicked on
      let cartbtn = document.querySelector('.navcart');
@@ -153,3 +218,29 @@ function removebtn() {
             cartcontainer.style.display = 'block';
      });
 
+     
+     
+     
+   
+     function payWithPaystack() {
+         let handler = PaystackPop.setup({
+          key: 'pk_test_494a628603f3fba01be43f075418ff4628e61d6f', // Replace with your public key
+          email: document.getElementById("Email").value,
+          amount:   parseFloat(document.getElementById('amount').innerText) * 100,
+          ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+          // label: "Optional string that replaces customer email"
+          onClose: function(){
+            alert('Window closed.');
+          },
+          callback: function(response){
+            let message = 'Payment complete! Reference: ' + response.reference;
+            alert(message);
+          }
+        });
+        handler.openIframe();
+      }
+
+      function showSummary(){
+        nameValidation();
+
+      }
